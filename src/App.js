@@ -1,43 +1,34 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AppHeader from "./components/AppHeader";
-import AppNav from "./components/AppNav";
-import Profile from "./components/Profile";
-import AppFooter from "./components/AppFooter";
+import Header from "./components/Header/Header";
+import Nav from "./components/Navbar/Nav";
+import Profile from "./components/Profile/Profile";
+import Footer from "./components/Footer/Footer";
+import Dialogs from './components/Dialogs/Dialogs'
+import {BrowserRouter, Route} from "react-router-dom";
+import News from "./components/News/News";
+import Music from "./components/Music/Music";
+import Settings from "./components/Settings/Settings";
 
 
 const App = () => {
-  return (
-        <div className={'AppWrapper'}>
-            <AppHeader/>
-            <AppNav/>
-            <Profile/>
-            <AppFooter/>
-        </div>)
+    return (
+        <BrowserRouter>
+            <div className={'AppWrapper'}>
+                <Header/>
+                <Nav/>
+                <div className={'AppWrapperContent'}>
+                    <Route path={'/profile'} component={Profile}/>
+                    <Route path={'/dialogs'} component={Dialogs}/>
+                    <Route path={'/news'} component={News}/>
+                    <Route path={'/music'} component={Music}/>
+                    <Route path={'/settings'} component={Settings}/>
+                </div>
+                <Footer/>
+            </div>
+        </BrowserRouter>)
 }
 
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//            Edit <code>src App js </code> and save to reload1111.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

@@ -1,0 +1,7 @@
+.MyPosts {
+    grid-area: MyPosts;
+}
+
+.Posts {
+    margin-top: 10px;
+}

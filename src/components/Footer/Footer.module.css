@@ -1,0 +1,5 @@
+.AppFooter {
+    grid-area: AppFooter;
+    background-color: chocolate;
+    color: chartreuse;
+}

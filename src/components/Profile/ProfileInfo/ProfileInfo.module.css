@@ -1,0 +1,19 @@
+
+
+.ContentSecondaryBlock {
+    /*grid-area: Content-secondary-block;*/
+}
+
+.CsbImg {
+    grid-area: CsbImg;
+
+}
+
+.CsbImg img{
+    width: 100px;
+}
+
+.CsbDescription {
+    grid-area: CsbDescription;
+    padding: 10px;
+}

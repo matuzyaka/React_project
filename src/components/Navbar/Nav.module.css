@@ -1,0 +1,18 @@
+.AppNav {
+    grid-area: AppNav;
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+.item {
+    color: white;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item a.active{
+    color: darkred;
+}
