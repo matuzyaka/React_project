@@ -1,43 +1,38 @@
-import React from 'react'
-import s from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
+import React from "react";
+import s from "./Dialogs.module.css";
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
+let dialogsData = [
+  { id: 0, name: "Sasha" },
+  { id: 1, name: "Petya" },
+  { id: 2, name: "Siroja" },
+  { id: 3, name: "Tanya" },
+  { id: 4, name: "Jorik" },
+  { id: 5, name: "Katya" },
+  { id: 6, name: "Manya" }
+];
 
-const DialogItem = (props) => {
-    return <div className={s.dialog + ' ' +s.active}>
-        <NavLink to={'/dialogs/' + props.id} activeClassName={s.active}>
-            {props.name}
-        </NavLink>
-    </div>}
+let messagesData = [
+  { id: 0, message: "Hello" },
+  { id: 1, message: "how are you?" },
+  { id: 2, message: "I'm fine" },
+  { id: 3, message: "Good bye" }
+];
 
-const Message = (props) => {
-        return <div className={s.messages}>{props.message}</div>
-}
+let dialogs = dialogsData.map(d => <DialogItem name={d.name} id={d.id} />);
+
+let messages = messagesData.map(m => <Message message={m.message} />);
 
 const Dialogs = () => {
-    return <div className={s.Content}>
-        <div className={s.dialogs}>
-            <div className={s.dialogsItems}>
-                <DialogItem name={'Sasha'} id={'0'}/>
-                <DialogItem name={'Petya'} id={'1'}/>
-                <DialogItem name={'Siroja'} id={'2'}/>
-                <DialogItem name={'Tanya'} id={'3'}/>
-                <DialogItem name={'Jorik'} id={'4'}/>
-                <DialogItem name={'Katya'} id={'5'}/>
-                <DialogItem name={'Manya'} id={'6'}/>
-                <DialogItem name={'Sasha'} id={'7'}/>
-            </div>
-            <div className={s.messages}>
-                <Message message={'Hello'}/>
-                <Message message={'how are you?'}/>
-                <Message message={'I\'m fine'}/>
-                <Message message={'Good bye'}/>
-            </div>
-        </div>
-        <div>
-
-        </div>
+  return (
+    <div className={s.Content}>
+      <div className={s.dialogs}>
+        <div className={s.dialogsItems}>{dialogs}</div>
+        <div className={s.messages}>{messages}</div>
+      </div>
     </div>
-}
+  );
+};
 
 export default Dialogs;
