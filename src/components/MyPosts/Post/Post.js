@@ -8,6 +8,7 @@ const Post = props => {
         src={
           "https://vignette.wikia.nocookie.net/avatar/images/1/1c/3%D1%8521_%D0%9A%D0%B0%D1%82%D0%B0%D1%80%D0%B0_%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82.jpg/revision/latest?cb=20130612094311&path-prefix=ru"
         }
+        alt={'userLogo'}
       />
       {props.message}
       <div>

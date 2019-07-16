@@ -11,15 +11,18 @@ const Profile = props => {
           src={
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1GMcvcrr4QIARmG7IAZFXg8T9we8tsHE8tt0aqwdE7OYCIC4"
           }
+          alt={'img'}
         />
       </div>
 
       <ProfileInfo />
 
-      <MyPosts postsData={props.profilePage.postsData}
-               newPostText={props.profilePage.newPostText}
-               addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}/>
+      <MyPosts
+        postsData={props.profilePage.postsData}
+        newPostText={props.profilePage.newPostText}
+        addPost={props.addPost}
+        updateNewPostText={props.updateNewPostText}
+      />
     </div>
   );
 };
