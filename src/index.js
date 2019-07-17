@@ -1,25 +1,28 @@
 
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import state, {subscribe} from "./redux/state";
-
+import store from "./redux/state";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import {BrowserRouter} from 'react-router-dom'
+import Dialogs from "./components/Dialogs/Dialogs";
+import Profile from "./components/Profile/Profile";
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state}/>
+            <App state={store.getState()} addMessage={store.addMessage.bind(store)}
+                updateNewMessageText={store.updateNewMessageText.bind(store)} addPost={store.addPost.bind(store)}
+                 updateNewPostText={store.updateNewPostText.bind(store)}/>
         </BrowserRouter>, document.getElementById("root")
     )
 }
 
-subscribe(rerenderEntireTree)
+store.subscribe(rerenderEntireTree)
 
-rerenderEntireTree(state)
+rerenderEntireTree(store.getState())
 
 // ReactDOM.render(
 //   <BrowserRouter>
