@@ -7,15 +7,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import {BrowserRouter} from 'react-router-dom'
-import Dialogs from "./components/Dialogs/Dialogs";
-import Profile from "./components/Profile/Profile";
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={store.getState()} addMessage={store.addMessage.bind(store)}
-                updateNewMessageText={store.updateNewMessageText.bind(store)} addPost={store.addPost.bind(store)}
-                 updateNewPostText={store.updateNewPostText.bind(store)}/>
+            <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
         </BrowserRouter>, document.getElementById("root")
     )
 }
